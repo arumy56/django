@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<h1>Stadium Names</h1>
+<ul>
+    {%for name in names %}
+    <li>
+        {{ name.team_name}}, {{name.stadium_name|default_if_none:""}}:{% if name.stadium_name %} Filled {% else %} Not Filled{%endif%}
+
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
